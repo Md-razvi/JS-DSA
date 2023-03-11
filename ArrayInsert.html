@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="arrValue" placeholder="Enter the value you want to Enter">
+    <input type="number" id="position" placeholder="Enter Position of an Array">
+    <button id="button1">Add Value in Position</button>
+</body>
+</html>
+<script>
+    let data=[23,34,56,12,78,92]
+    let button1=document.getElementById("button1");
+    button1.addEventListener("click",insertElement);
+    function insertElement(){
+        let Value =+(document.getElementById("arrValue").value)
+        let position=+(document.getElementById("position").value);
+       
+            for(let i=data.length-1;i>=position;i--)
+            {
+                data[i+1]=data[i]
+            }
+            data[position]=Value;
+                console.log(data)
+        
+        
+    }
+    
+</script>
