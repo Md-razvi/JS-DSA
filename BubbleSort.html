@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border:2px solid;
+            text-align: center;
+            width:50%;
+            margin: auto;
+            background-color: rgb(177, 239, 238);
+        }
+        h1,h3{
+            text-decoration: underline;
+            color:tomato;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type="submit" name="" id=""> -->
+    <div id="container">
+        <h1>Bubble Sort Algorithm</h1>
+        <div id="box">
+            <p> </p>
+        </div>
+        <button id="butt">Sort</button>
+        <h3>Ans:</h3>
+        <div id="Ans">
+            <p></p>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+let Arr=[30,10,50,40,34,22,20];
+let Once=true;
+let div=document.querySelector("#box>p");
+let button =document.getElementById("butt");
+let Answer=document.querySelector("#Ans>p");
+for(let l=0;l<Arr.length;l++)
+{
+    // console.log("ok")
+    div.textContent=div.textContent+Arr[l]+" ";
+}
+button.addEventListener("click",function (){
+    for(let i=0;i<Arr.length-1;i++)
+{
+    let swap=false;
+    for(let j=0;j<(Arr.length-1)-i;j++)
+    {
+        if(Arr[j+1]<Arr[j])
+        {
+            // console.log("ok")
+            swap=true;
+            Swap(Arr,j,j+1);
+        }
+    }
+    if(swap===false)
+    {
+        break;
+    }
+
+}
+if(Once){
+Once=false;
+for(let l=0;l<Arr.length;l++)
+{
+    // console.log("ok")
+    Answer.textContent=Answer.textContent+Arr[l]+" ";
+}
+}
+console.log(Arr);
+
+})
+
+
+function Swap(arr,a,b)
+{
+    let temp=arr[a];
+    arr[a]=arr[b];
+    arr[b]=temp;
+}
+// console.log(Arr)
+</script>
